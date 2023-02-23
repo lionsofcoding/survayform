@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container mt-5">
+        <div class="row d-flex justify-content-center align-items-center">
+            <div class="col-md-8">
+                <div class="site_logo mb-4 text-center">
+                    <img id="register" src="logo.png" alt="">
+
+                    <button type="button" class="start_btn">Start</button>
+                </div>
+                <form id="regForm" method="post">
+                    <!-- <h1 >Survey Form</h1> -->
+                    <div class="all-steps d-none" id="all-steps">
+                        <span class="step"><i class="fa fa-user"></i></span>
+                        <span class="step"><i class="fa fa-map-marker"></i></span>
+                        <span class="step"><i class="fa fa-shopping-bag"></i></span>
+                        <span class="step"><i class="fa fa-car"></i></span>
+                        <span class="step"><i class="fa fa-spotify"></i></span>
+                        <span class="step"><i class="fa fa-mobile-phone"></i></span>
+                    </div>
+
+                    <div class="tab">
+                        <h6>Company Name</h6>
+                        <p>
+                            <input placeholder="Type your answer here..." oninput="this.className = ''" name="fname">
+                        </p>
+
+                    </div>
+                    <div class="tab">
+                        <h6>Firstly, please insert your full nameThis question is required. *</h6>
+                        <label for="">As per your passport, please!</label>
+                        <p><input placeholder="Type your answer here..." oninput="this.className = ''" name="dd"></p>
+
+                    </div>
+                    <div class="tab">
+                        <h6>What's your Favourite Shopping site?</h6>
+                        <p><input placeholder="Type your answer here..." oninput="this.className = ''" name="email"></p>
+
+                    </div>
+                    <div class="tab">
+                        <h6>What's your Favourite car?</h6>
+                        <p><input placeholder="Type your answer here..." oninput="this.className = ''" name="uname"></p>
+                    </div>
+
+                    <div class="tab">
+                        <h6>What's your Favourite Song?</h6>
+                        <p><input placeholder="Type your answer here..." oninput="this.className = ''" name="uname"></p>
+                    </div>
+
+
+                    <div class="tab">
+                        <h6>What's your Favourite Mobile brand?</h6>
+                        <p><input placeholder="Type your answer here..." oninput="this.className = ''" name="uname"></p>
+                    </div>
+                    <div class="thanks-message text-center" id="text-message"> <img
+                            src="right.png" width="100" class="mb-4">
+                        <h3>Thankyou for your feedback!</h3> <span>Thanks for your valuable information. It helps us to
+                            improve our services!</span>
+                    </div>
+                    <div style="overflow:auto;" id="nextprevious">
+                        <div style="float:right;">
+                            <button type="button" id="prevBtn" onclick="nextPrev(-1)">
+                                Previous</button>
+                            <button type="button" id="nextBtn" onclick="nextPrev(1)">
+                                Enter</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>
