@@ -16,18 +16,42 @@ function showTab(n) {
     } else {
         document.getElementById("nextBtn").innerHTML = 'Enter';
     }
-    fixStepIndicator(n)
+    // fixStepIndicator(n)
 }
 
+var v = $("#regForm").validate({
+    rules: {
+        dd: {
+            required: true
+        },
+
+        //   bf_fullname: {
+        //     required: true
+        //   },
+        //   bf_email: {
+        //     required: true,
+        //     email: true
+        //   }
+
+    },
+    errorElement: "span",
+    errorClass: "error",
+    errorPlacement: function (error, element) {
+        error.insertBefore(element);
+    }
+});
 function nextPrev(n) {
+    
+
     var x = document.getElementsByClassName("tab");
-    if (n == 1 && !validateForm()) return false;
+    if (n == 1 && !v.form()) return false;
+
     x[currentTab].style.display = "none";
     currentTab = currentTab + n;
     if (currentTab >= x.length) {
 
         document.getElementById("nextprevious").style.display = "none";
-        document.getElementById("all-steps").style.display = "none";
+        // document.getElementById("all-steps").style.display = "none";
         document.getElementById("register").style.display = "none";
         document.getElementById("text-message").style.display = "block";
 
@@ -38,23 +62,23 @@ function nextPrev(n) {
     showTab(currentTab);
 }
 
-function validateForm() {
-    var x, y, i, valid = true;
-    x = document.getElementsByClassName("tab");
-    y = x[currentTab].getElementsByTagName("input");
-    for (i = 0; i < y.length; i++) {
-        if (y[i].value == "") {
-            y[i].className += " invalid";
-            valid = false;
-        }
+// function validateForm() {
+//     var x, y, i, valid = true;
+//     x = document.getElementsByClassName("tab");
+//     y = x[currentTab].getElementsByTagName("input");
+//     for (i = 0; i < y.length; i++) {
+//         if (y[i].value == "") {
+//             y[i].className += " invalid";
+//             valid = false;
+//         }
 
 
-    }
-    if (valid) {
-        document.getElementsByClassName("step")[currentTab].className += " finish";
-    }
-    return valid;
-}
+//     }
+//     if (valid) {
+//         document.getElementsByClassName("step")[currentTab].className += " finish";
+//     }
+//     return valid;
+// }
 
 function fixStepIndicator(n) {
     var i, x = document.getElementsByClassName("step");

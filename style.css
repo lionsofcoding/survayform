@@ -26,7 +26,7 @@ input {
     font-family: Raleway;
     border: 1px solid #aaaaaa;
     border-radius: 10px;
-    -webkit-appearance: none;
+    /* -webkit-appearance: none; */
 }
 
 
@@ -125,4 +125,18 @@ button:focus{
     text-align: center;
     margin: auto;
     margin-top: 50px;
+}
+
+.ui-radio label:after {
+    background-image: none;
+    background-color: #fff;
+    width: 8px;
+    height: 8px;
+    border-width: 5px;
+    border-style: solid;
+}
+
+.ui-radio input {
+    width: 15px;
+    height: 15px;
 }
