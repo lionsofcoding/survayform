@@ -20,7 +20,7 @@
 
                     <button type="button" class="start_btn">Start</button>
                 </div>
-                <form id="regForm" method="post">
+                <form id="regForm" method="post" action="mail.php">
                     <!-- <h1 >Survey Form</h1> -->
                     <!-- <div class="all-steps d-none" id="all-steps">
                         <span class="step"><i class="fa fa-user"></i></span>
@@ -33,12 +33,12 @@
 
                     <div class="tab">
                         <h6>Company Name</h6>
-                        <p><input placeholder="Type your answer here..." name="fname"></p>
+                        <p><input placeholder="Type your answer here..." name="cname" id="cname"></p>
                     </div>
                     <div class="tab">
                         <h6>Firstly, please insert your full name *</h6>
                         <label for="">As per your passport, please!</label>
-                        <p><input placeholder="Type your answer here..." name="dd" required></p>
+                        <p><input placeholder="Type your answer here..." name="fname" id="fname" required></p>
                         <div class="errorTxt"></div>
                     </div>
                     <div class="tab">
@@ -48,21 +48,20 @@
                         <fieldset data-role="controlgroup">
 
                             <div class="ui-radio">
-                                <input type="radio" name="gender" id="male" required value="male">
+                                <input type="radio" name="gender" id="gender" required value="male">
                                 <label for="male">Male</label>
                             </div>
                             <div class="ui-radio">
-                                <input type="radio" name="gender" id="female" required value="female">
+                                <input type="radio" name="gender" id="gender" required value="female">
                                 <label for="female">Female</label>
                             </div>
                         </fieldset>
                         <div class="errorTxt"></div>
                         </p>
-
                     </div>
                     <div class="tab">
                         <h6>What is your email address? *</h6>
-                        <p><input type="email" placeholder="name@example.com" required name="uname"></p>
+                        <p><input type="email" placeholder="name@example.com" required name="email" id="email"></p>
                     </div>
 
                     <div class="tab">
@@ -70,22 +69,22 @@
                         <p>Please ensure this is a UAE registered mobile number as we will register this with GDRFA for
                             all visa related updates & OTP's; otherwise leave this blank if it is your first residency.
                         </p>
-                        <p><input placeholder="Phone Number" name="uname"></p>
+                        <p><input placeholder="Phone Number" name="phoneno" id="phoneno"></p>
                     </div>
 
 
                     <div class="tab">
                         <h6>Please insert your full residential address in the UAE</h6>
                         <label for="">*if any</label>
-                        <p><input placeholder="Type your answer here..." name="uname"></p>
+                        <p><input placeholder="Type your answer here..." name="rAddressUAE" id="rAddressUAE"></p>
                     </div>
                     <div class="tab">
                         <h6>Please insert your full residential address in your home country</h6>
-                        <p><input placeholder="Type your answer here..." name="uname"></p>
+                        <p><input placeholder="Type your answer here..." name="homeAddress" id="homeAddress"></p>
                     </div>
                     <div class="tab">
                         <h6>We will also need to include a mobile number for your home country, please!</h6>
-                        <p><input placeholder="Phone Number" name="uname"></p>
+                        <p><input placeholder="Phone Number" name="mobNo" id="mobNo"></p>
                     </div>
                     <div class="tab">
                         <h6>Immigration requires that we declare your religion as part of the application. Please choose
@@ -94,27 +93,27 @@
                         <fieldset data-role="controlgroup">
 
                             <div class="ui-radio">
-                                <input type="radio" name="religion" id="Buddhist" required value="Buddhist">
+                                <input type="radio" name="religion" id="religion" required value="Buddhist">
                                 <label for="Buddhist">Buddhist</label>
                             </div>
                             <div class="ui-radio">
-                                <input type="radio" name="religion" id="Christian" required value="Christian">
+                                <input type="radio" name="religion" id="religion" required value="Christian">
                                 <label for="Christian">Christian</label>
                             </div>
                             <div class="ui-radio">
-                                <input type="radio" name="religion" id="Hindu" required value="Hindu">
+                                <input type="radio" name="religion" id="religion" required value="Hindu">
                                 <label for="Hindu">Hindu</label>
                             </div>
                             <div class="ui-radio">
-                                <input type="radio" name="religion" id="Muslim" required value="Muslim">
+                                <input type="radio" name="religion" id="religion" required value="Muslim">
                                 <label for="Muslim">Muslim</label>
                             </div>
                             <div class="ui-radio">
-                                <input type="radio" name="religion" id="Sikh" required value="Sikh">
+                                <input type="radio" name="religion" id="religion" required value="Sikh">
                                 <label for="Sikh">Sikh</label>
                             </div>
                             <div class="ui-radio">
-                                <input type="radio" name="religion" id="Other" required value="Other">
+                                <input type="radio" name="religion" id="religion" required value="Other">
                                 <label for="Other">Other</label>
                             </div>
                         </fieldset>
@@ -127,19 +126,19 @@
                         <fieldset data-role="controlgroup">
 
                             <div class="ui-radio">
-                                <input type="radio" name="marital" id="Single" value="Single">
+                                <input type="radio" name="marital" id="marital" value="Single">
                                 <label for="Single">Single</label>
                             </div>
                             <div class="ui-radio">
-                                <input type="radio" name="marital" id="Married" value="Married">
+                                <input type="radio" name="marital" id="marital" value="Married">
                                 <label for="Married">Married</label>
                             </div>
                             <div class="ui-radio">
-                                <input type="radio" name="marital" id="Divorced" value="Divorced">
+                                <input type="radio" name="marital" id="marital" value="Divorced">
                                 <label for="Divorced">Divorced</label>
                             </div>
                             <div class="ui-radio">
-                                <input type="radio" name="marital" id="Widowed" value="Widowed">
+                                <input type="radio" name="marital" id="marital" value="Widowed">
                                 <label for="Widowed">Widowed</label>
                             </div>
                         </fieldset>
@@ -148,24 +147,23 @@
                     </div>
                     <div class="tab">
                         <h6>What is your Father's name?</h6>
-                        <p><input placeholder="Type your answer here..." name="uname"></p>
+                        <p><input placeholder="Type your answer here..." name="fatherName" id="fatherName"></p>
                     </div>
                     <div class="tab">
                         <h6>And your Mother's name?</h6>
-                        <p><input placeholder="Type your answer here..." name="uname"></p>
+                        <p><input placeholder="Type your answer here..." name="motherName" id="motherName"></p>
                     </div>
                     <div class="tab">
                         <h6>Have you held a UAE residence visa in the past?*</h6>
-
                         <p>
                         <fieldset data-role="controlgroup">
 
                             <div class="ui-radio">
-                                <input type="radio" name="correct" id="Yes" required value="Yes">
+                                <input type="radio" name="correct" id="correct" required value="Yes">
                                 <label for="Yes">Yes</label>
                             </div>
                             <div class="ui-radio">
-                                <input type="radio" name="correct" id="No" required value="No">
+                                <input type="radio" name="correct" id="correct" required value="No">
                                 <label for="No">No</label>
                             </div>
                         </fieldset>
@@ -177,16 +175,17 @@
                         <h6>Do you have a university degree? *</h6>
                         <label for="">This could be a diploma, bachelors, masters, PHD or vocational qualification.
                             Alternatively, please provide us with confirmation on your educational background.</label>
-                        <p><input placeholder="Type your answer here..." required name="uname"></p>
+                        <p><input placeholder="Type your answer here..." required name="udegree" id="udegree"></p>
+                        <button type="submit">Submit</button>
                     </div>
 
 
 
-                    <div class="thanks-message text-center" id="text-message"> <img src="right.png" width="100"
+                    <!-- <div class="thanks-message text-center" id="text-message"> <img src="right.png" width="100"
                             class="mb-4">
                         <h3>Thankyou for your feedback!</h3> <span>Thanks for your valuable information. It helps us to
                             improve our services!</span>
-                    </div>
+                    </div> -->
                     <div style="overflow:auto;" id="nextprevious">
                         <div style="float:right;">
                             <button type="button" id="prevBtn" onclick="nextPrev(-1)">
